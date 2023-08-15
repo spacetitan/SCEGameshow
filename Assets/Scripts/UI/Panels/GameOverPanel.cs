@@ -35,7 +35,7 @@ public class GameOverPanel : UIPanel
         for(int i = 0; i < GameManager.instance.numPlayers; i++)
         {
             InputBox box = Instantiate(this.template, this.templateParent).GetComponent<InputBox>();
-            box.SetText("Player" + (i+1).ToString(), GameManager.instance.playerScore[i]);
+            box.SetText(GameManager.instance.playerName[i], GameManager.instance.playerScore[i]);
             box.gameObject.SetActive(true);
         }
 

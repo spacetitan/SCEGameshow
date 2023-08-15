@@ -1,6 +1,20 @@
+using System;
+using SimpleJSON;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class QuestionData
+{
+    public Dictionary<string, int> answers = new Dictionary<string, int>();
+    public string question;
+
+    public void AddQuestion(string key, int val)
+    { 
+        answers.Add(key, val);
+    }
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -10,49 +24,73 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public List<string> questions = new List<string>();
-    public Dictionary<string, int> answers{get; private set;} = new Dictionary<string, int>();
+    //public List<string> questions = new List<string>();
+    //public Dictionary<string, int> answers{get; private set;} = new Dictionary<string, int>();
+
+    public List<QuestionData> baseQuestionData = new List<QuestionData>();
+    public List<QuestionData> questionData = new List<QuestionData>();
 
     public int numPlayers = 0;
     public int currentRound = 0;
 
     public List<string> playerName = new List<string>();
     public List<float> playerScore = new List<float>(); 
+
     void Start()
     {
-        SetDummyTable();
+        SetTable();
     }
 
-    void Update()
+    public void SetTable()
     {
-        
-    }
-
-    public void SetTable(Dictionary<string, int> table)
-    {
-        answers = new Dictionary<string, int>();
-        foreach(KeyValuePair<string, int> kvp in table)
+        string jsonBlob = File.ReadAllText("Assets/Scripts/questions.json");
+        JSONNode nodes = (JSONNode)JSON.Parse(jsonBlob);
+        foreach (JSONObject x in nodes)
         {
-            answers.Add(kvp.Key, kvp.Value);
+            QuestionData qd = new QuestionData();
+            qd.question = x["question"];
+            Dictionary<string, int> a = new Dictionary<string, int>();
+            foreach (JSONObject y in x["answers"])
+            {
+                foreach (KeyValuePair<string, JSONNode> temp in y)
+                {
+                    qd.AddQuestion(temp.Key, (int)temp.Value);
+                    //Debug.Log("Added: " + temp.Key + ": " + temp.Value);
+                }
+            }
+
+            baseQuestionData.Add(qd);
+            questionData.Add(qd);
         }
+
+       // print(questionData);
+
+
+       // answers = new Dictionary<string, int>();
+        //foreach(KeyValuePair<string, int> kvp in table)
+       // {
+        //    answers.Add(kvp.Key, kvp.Value);
+       // }
+
+       // QuestionData data = new QuestionData(nodes[0]);
     }
 
-    public string GetQuestion()
+   public QuestionData GetQuestionData()
     {
-        if(questions.Count > 0)
+        if (questionData.Count > 0)
         {
-            string val = questions[0];
-            questions.RemoveAt(0);
+            QuestionData val = questionData[0];
+            questionData.RemoveAt(0);
             return val;
         }
         else
         {
             Debug.LogError("Error: No more questions");
-            return "";
+            return null;
         }
-    }
+   }
 
-    public string GetQuestion(int num)
+    /*public string GetQuestion(int num)
     {
         if(questions.Count > 0)
         {
@@ -65,9 +103,9 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Error: No more questions");
             return "";
         }
-    }
+    }*/
 
-    public void SetDummyTable()
+    /*public void SetDummyTable()
     {
         answers = new Dictionary<string, int>();
         answers.Add("dummy", 100);
@@ -75,16 +113,15 @@ public class GameManager : MonoBehaviour
         {
             answers.Add("dummy" + i.ToString(), i);
         }
+
+        print(answers);
+    }*/
+
+    public void SetAnswers()
+    {
+        //answers = new Dictionary<string, int>();
+
     }
 
-    public int CheckAnswer(string answer)
-    {
-        int points = 0;
-        string key = answer.ToLower();
-        if(this.answers.ContainsKey(key))
-        {
-            points = answers[key];
-        }
-        return points;
-    }
+    
 }

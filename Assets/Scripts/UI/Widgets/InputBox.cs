@@ -6,6 +6,7 @@ using TMPro;
 
 public class InputBox : MonoBehaviour
 {
+    public GamePanel gamePanel = null;
     public TMP_InputField inputField = null;
     public TextMeshProUGUI pointsText = null;
     public Button nextButton = null;
@@ -20,7 +21,7 @@ public class InputBox : MonoBehaviour
 
     public void CheckAnswer()
     {
-        points = GameManager.instance.CheckAnswer(inputField.text);
+        points = gamePanel.CheckAnswer(inputField.text);
         pointsText.text = points.ToString();
     }
 

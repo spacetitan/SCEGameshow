@@ -522,8 +522,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gameshow Title Gameshow Title
+  m_text: 'Family Feud: SCE Edition'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -721,8 +721,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.25
+  m_fontSize: 100.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a4de2cc63f53dd47894055e7d8e1307, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e0e7c18854798e45b6c0a1269c7502d, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2377,6 +2377,10 @@ PrefabInstance:
       propertyPath: imageCG
       value: 
       objectReference: {fileID: 1129763897}
+    - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
+      propertyPath: gamePanel
+      value: 
+      objectReference: {fileID: 2003464483}
     - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
       propertyPath: nextButton
       value: 
@@ -3712,7 +3716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.64705884, b: 0, a: 1}
+  m_Color: {r: 0.18604486, g: 0.3679245, b: 0.2484036, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4788,8 +4792,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282342959
+  m_fontColor: {r: 0.18431373, g: 0.36862746, b: 0.24705882, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4885,25 +4889,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24c4f02bf068ed40b1dbd4a7fbb4022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions:
-  - Name a manual work task that you wish was automated.
-  - Name a way you would commute to the office.
-  - Name something you currently bring to the office.
-  - Name something you wish you could bring to the office.
-  - Name something that you might find in the break room.
-  - Name something you would see in an Edison commercial or advertisement.
-  - Name something you would send through Pony Mail.
-  - Name the best lunch spot near Innovation Villiage.
-  - Name a type of email that you are happy to see in your inbox.
-  - Name something that you'd wear to the SCE Company Picnic and Lineman's Rodeo.
-  - Name something you WOULD NOT wear to the SCE Company Picnic and Lineman's Rodeo.
-  - Name a work activity you always do safetly.
-  - How many meetings do you attend in one day?
-  - Name something you forget to bring to work.
-  - Name an activity you'd do with a coworker to get to know them better.
   numPlayers: 0
   currentRound: 0
-  playerName: []
+  playerName:
+  - Devin
+  - Rob
+  - Roger
   playerScore: []
 --- !u!4 &1756289388
 Transform:
@@ -5162,6 +5153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 55210299}
     - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
+      propertyPath: gamePanel
+      value: 
+      objectReference: {fileID: 2003464483}
+    - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 1424694733}
@@ -5341,7 +5336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.64705884, b: 0, a: 1}
+  m_Color: {r: 0.18431373, g: 0.36862746, b: 0.24705882, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5681,6 +5676,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1041908144}
     - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
+      propertyPath: gamePanel
+      value: 
+      objectReference: {fileID: 2003464483}
+    - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 1367799048}
@@ -5888,6 +5887,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 975626919}
     - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
+      propertyPath: gamePanel
+      value: 
+      objectReference: {fileID: 2003464483}
+    - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 1827423369}
@@ -5976,7 +5979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75505bf1f78a83b40b79c1bfcba55b7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71b5c63be6691dd4db585876c8878043, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6070,7 +6073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8207547, g: 0.81578046, b: 0, a: 1}
+  m_Color: {r: 0.18431373, g: 0.36862746, b: 0.24705882, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6132,8 +6135,7 @@ MonoBehaviour:
   nextRoundButton: {fileID: 1148936334}
   timerText: {fileID: 1130331605}
   buttonText: {fileID: 1360258754}
-  questions: []
-  time: 15
+  time: 30
 --- !u!114 &2003464484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6464,6 +6466,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 701386387}
     - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
+      propertyPath: gamePanel
+      value: 
+      objectReference: {fileID: 2003464483}
+    - target: {fileID: 7650715058256048119, guid: f4e54667929b00b4aa764022a49dee3b, type: 3}
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 2081790186}
@@ -6510,6 +6516,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2128314520020871465, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128314520020871465, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128314520020871465, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128314520020871465, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282342959
+      objectReference: {fileID: 0}
     - target: {fileID: 2353842390766274023, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6534,9 +6556,69 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2482459582579461739, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482459582579461739, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482459582579461739, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.18431373
+      objectReference: {fileID: 0}
     - target: {fileID: 2753795993197620964, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
       propertyPath: m_Name
       value: Container_NumberCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974372852942328212, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974372852942328212, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e0e7c18854798e45b6c0a1269c7502d, type: 3}
+    - target: {fileID: 3974372852942328212, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974372852942328212, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974372852942328212, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508716837918449017, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71b5c63be6691dd4db585876c8878043, type: 3}
+    - target: {fileID: 4508716837918449017, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508716837918449017, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508716837918449017, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612386686641862733, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612386686641862733, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612386686641862733, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.18431373
       objectReference: {fileID: 0}
     - target: {fileID: 7456628227114259346, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
       propertyPath: m_Pivot.x
@@ -6645,6 +6727,26 @@ PrefabInstance:
     - target: {fileID: 7739577325487478429, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780109457517778059, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780109457517778059, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e0e7c18854798e45b6c0a1269c7502d, type: 3}
+    - target: {fileID: 8780109457517778059, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780109457517778059, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780109457517778059, guid: d69596f1bbef333409f5a8dcd490b0d9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

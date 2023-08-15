@@ -14,11 +14,12 @@ public class GamePanel : UIPanel
     public TextMeshProUGUI timerText = null;
     public TextMeshProUGUI buttonText = null;
 
-    public List<string> questions = new List<string>();
+    public List<QuestionData> dataList = new List<QuestionData>();
 
     private int round = 0;
     private int question = 0;
-    public float time = 15.0f;
+    private int answer = 0;
+    public float time = 30.0f;
     private float timer = 0.0f;
 
     private bool gameStarted = false;
@@ -83,54 +84,55 @@ public class GamePanel : UIPanel
 
     void GrabQuestions(bool random)
     {
-        questions.Clear();
+        dataList.Clear();
 
         if(!random)
         {
-            if(GameManager.instance.questions.Count >= 5)
+            if (GameManager.instance.questionData.Count >= 5)
             {
-                for(int i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
-                    questions.Add(GameManager.instance.GetQuestion());
+                    dataList.Add(GameManager.instance.GetQuestionData());
                 }
             }
             else
             {
-                for(int i = 0; i < GameManager.instance.questions.Count; i++)
+                for (int i = 0; i < GameManager.instance.questionData.Count; i++)
                 {
-                    questions.Add(GameManager.instance.GetQuestion());
+                    dataList.Add(GameManager.instance.GetQuestionData());
                 }
             }
         }
         else
         {
-            if(GameManager.instance.questions.Count >= 5)
-            {
-                for(int i = 0; i < 5; i++)
-                {
-                    int val = Random.Range(0, GameManager.instance.questions.Count);
-                    questions.Add(GameManager.instance.GetQuestion(val));
-                }
-            }
-            else
-            {
-                for(int i = 0; i < GameManager.instance.questions.Count; i++)
-                {
-                    questions.Add(GameManager.instance.GetQuestion());
-                }
-            }
+            //if (GameManager.instance.questionData.Count >= 5)
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        int val = Random.Range(0, GameManager.instance.questions.Count);
+            //        questions.Add(GameManager.instance.GetQuestion(val));
+            //    }
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < GameManager.instance.questions.Count; i++)
+            //    {
+            //        questions.Add(GameManager.instance.GetQuestion());
+            //    }
+            //}
         }
 
-        
+        Debug.Log(dataList.Count);
     }
 
     void StartRound()
     {
         this.gameStarted = true;
-        GrabQuestions(true);
+        GrabQuestions(false);
 
         this.round++;
         this.question = 1;
+        this.answer = 1;
 
         foreach(InputBox box in this.answerFields)
         {
@@ -206,8 +208,8 @@ public class GamePanel : UIPanel
 
     void SetQuestion()
     {
-        this.questionLabel.text = "Question " + this.question.ToString() + ": ";
-        this.questionText.text = this.questions[this.question-1];
+        this.questionLabel.text = "Question " + this.question.ToString() + ": " + this.dataList[this.question-1].question;
+        this.questionText.text = ""; //this.questions[this.question-1];
     }
 
     void SetNextButtonText()
@@ -236,5 +238,26 @@ public class GamePanel : UIPanel
         this.answerFields[this.question-1].SetArrow(true);
 
         EventSystem.current.SetSelectedGameObject(this.answerFields[this.question-1].inputField.gameObject);
+    }
+
+    public int CheckAnswer(string answer)
+    {
+        int points = 0;
+        string key = answer.ToLower();
+        QuestionData tempData = dataList[this.answer-1];
+
+        if (tempData.answers.ContainsKey(key))
+        {
+            points = tempData.answers[key];
+        }
+
+        this.answer++;
+
+        //if(this.answers.ContainsKey(key))
+        //{
+        //    points = answers[key];
+        //}
+        Debug.Log(points);
+        return points;
     }
 }
