@@ -252,11 +252,6 @@ public class GamePanel : UIPanel
         }
 
         this.answer++;
-
-        //if(this.answers.ContainsKey(key))
-        //{
-        //    points = answers[key];
-        //}
         Debug.Log(points);
         return points;
     }

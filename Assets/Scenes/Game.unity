@@ -4892,9 +4892,9 @@ MonoBehaviour:
   numPlayers: 0
   currentRound: 0
   playerName:
-  - Devin
-  - Rob
-  - Roger
+  - Player 1
+  - Player 2
+  - Player 3
   playerScore: []
 --- !u!4 &1756289388
 Transform:

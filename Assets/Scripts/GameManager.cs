@@ -44,8 +44,9 @@ public class GameManager : MonoBehaviour
     public void SetTable()
     {
         string jsonBlob = File.ReadAllText("Assets/Scripts/questions.json");
-        JSONNode nodes = (JSONNode)JSON.Parse(jsonBlob);
-        foreach (JSONObject x in nodes)
+        JSONObject nodes = (JSONObject)JSON.Parse(jsonBlob);
+        Debug.Log(nodes.ToString());
+        foreach(JSONObject x in nodes["questions"])
         {
             QuestionData qd = new QuestionData();
             qd.question = x["question"];
@@ -64,15 +65,6 @@ public class GameManager : MonoBehaviour
         }
 
        // print(questionData);
-
-
-       // answers = new Dictionary<string, int>();
-        //foreach(KeyValuePair<string, int> kvp in table)
-       // {
-        //    answers.Add(kvp.Key, kvp.Value);
-       // }
-
-       // QuestionData data = new QuestionData(nodes[0]);
     }
 
    public QuestionData GetQuestionData()
