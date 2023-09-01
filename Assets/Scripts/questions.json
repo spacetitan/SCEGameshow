@@ -116,7 +116,7 @@
         {
             "question": "Other Than Letters, Name Something People Get in the Mail",
                 "answers":[{
-                    "junk Mail":24,
+                    "junk mail":24,
                     "magazines":22,
                     "bills":17,
                     "packages":14,
@@ -127,7 +127,7 @@
         {
             "question": "Name Something You See Outside That Would Make You Want to Stay Inside",
                 "answers":[{
-                    "weather":71,
+                    "bad weather":71,
                     "animal":13,
                     "zombies":3,
                     "apocalypes":2,
